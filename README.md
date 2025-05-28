@@ -77,6 +77,8 @@ Built for both users and designers, ZIVÉ integrates commerce, creativity, and t
 
 ---
 
+## 🏗 Architecture
+
 ```
 ┌────────────────────────────┐
 │    User Device (Flutter)   │
