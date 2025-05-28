@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="./logo.svg" alt="ZIVÉ Logo" width="160" style="border-radius: 18px; box-shadow: 0 4px 24px #0002;"/>
+  <img src="./logo." alt="ZIVÉ Logo" width="160" style="border-radius: 18px; box-shadow: 0 4px 24px #0002;"/>
 </p>
 
 <h1 align="center" style="font-size:2.5rem; margin-bottom:0;">
@@ -81,24 +81,28 @@ Built for both users and designers, ZIVÉ integrates commerce, creativity, and t
 
 ## 🏗 Architecture
 
-```mermaid
-flowchart TD
-    A[User Device (Flutter App)]
-    B[NestJS Backend API]
-    C[PostgreSQL + Prisma]
-    D[ML Engine via REST]
-    E[Recommendation System]
-    F[Stripe / Razorpay]
-    G[Checkout Flow]
-    H[Email Service (SendGrid/Mailgun)]
-
-    A --> B
-    B --> C
-    B --> D
-    D --> E
-    B --> F
-    F --> G
-    B --> H
+```
+┌────────────────────────────┐
+│    User Device (Flutter)   │
+└────────────┬───────────────┘
+             │
+             ▼
+┌────────────────────────────┐
+│     NestJS Backend API     │
+└──┬────┬────┬─────┬────┬────┘
+   │    │    │     │    │
+   ▼    ▼    ▼     ▼    ▼
+   DB   ML   Email Pay  ┌──────────────┐
+(PostgreSQL) │ Service ││ Checkout Flow │
+ (Prisma)    │         │└──────────────┘
+             ▼
+  ┌─────────────────────────────┐
+  │ ML Engine (REST)            │
+  └────────────┬────────────────┘
+               ▼
+    ┌──────────────────────────┐
+    │ Recommendation System    │
+    └──────────────────────────┘
 ```
 
 ---
