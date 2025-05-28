@@ -77,27 +77,44 @@ Built for both users and designers, ZIVÉ integrates commerce, creativity, and t
 
 ---
 
-## 🏗 Architecture
-
-```mermaid
-flowchart TD
-    A[User Device (Flutter App)]
-    B[NestJS Backend API]
-    C[PostgreSQL + Prisma]
-    D[ML Engine via REST]
-    E[Recommendation System]
-    F[Stripe / Razorpay]
-    G[Checkout Flow]
-    H[Email Service (SendGrid/Mailgun)]
-
-    A --> B
-    B <--> C
-    B --> D
-    D <--> E
-    B --> F
-    F <--> G
-    B --> H
 ```
+┌────────────────────────────┐
+│    User Device (Flutter)   │
+└────────────┬───────────────┘
+             │
+             ▼
+┌────────────────────────────┐
+│     NestJS Backend API     │
+└──┬────┬────┬─────┬────┬────┘
+   │    │    │     │    │
+   ▼    ▼    ▼     ▼    ▼
+   DB   ML   Email Pay  ┌──────────────┐
+(PostgreSQL) │ Service ││ Checkout Flow │
+ (Prisma)    │         │└──────────────┘
+             ▼
+  ┌─────────────────────────────┐
+  │ ML Engine (REST)            │
+  └────────────┬────────────────┘
+               ▼
+    ┌──────────────────────────┐
+    │ Recommendation System    │
+    └──────────────────────────┘
+```
+
+---
+
+### 🔗 Component Summary
+
+| Component                     | Description                                      |
+|------------------------------|--------------------------------------------------|
+| **User Device**              | Flutter frontend application                     |
+| **NestJS Backend API**       | Central API handling business logic              |
+| **PostgreSQL + Prisma**      | Persistent database with ORM                     |
+| **ML Engine (via REST)**     | ML model interface for predictions               |
+| **Recommendation System**    | Provides user/content recommendations            |
+| **Stripe / Razorpay**        | Payment gateway integration                      |
+| **Checkout Flow**            | User checkout logic and payment processing       |
+| **Email Service**            | Transactional emails via SendGrid/Mailgun        |
 
 ---
 
