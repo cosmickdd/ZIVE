@@ -81,8 +81,7 @@ Built for both users and designers, ZIVÉ integrates commerce, creativity, and t
 
 ## 🏗 Architecture
 
-<!-- Mermaid diagram for GitHub.com -->
-<pre> ```mermaid
+```mermaid
 flowchart TD
     A[User Device (Flutter App)]
     B[NestJS Backend API]
@@ -91,7 +90,7 @@ flowchart TD
     E[Recommendation System]
     F[Stripe / Razorpay]
     G[Checkout Flow]
-    H[Email Service (SendGrid/Mailgun)] </pre>
+    H[Email Service (SendGrid/Mailgun)]
 
     A --> B
     B --> C
