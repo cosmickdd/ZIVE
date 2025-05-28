@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://your-logo-url.com/logo.png" alt="ZIVÉ Logo" width="150"/>
+  <img src="./logo.png" alt="ZIVÉ Logo" width="150"/>
 </p>
 
 <h1 align="center">✨ ZIVÉ — Modern Fashion & E-Commerce Platform ✨</h1>
