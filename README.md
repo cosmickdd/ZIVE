@@ -1,10 +1,12 @@
 <p align="center">
-  <img src="./logo.png" alt="ZIVÉ Logo" width="150"/>
+  <img src="./logo.svg" alt="ZIVÉ Logo" width="160" style="border-radius: 18px; box-shadow: 0 4px 24px #0002;"/>
 </p>
 
-<h1 align="center">✨ ZIVÉ — Modern Fashion & E-Commerce Platform ✨</h1>
+<h1 align="center" style="font-size:2.5rem; margin-bottom:0;">
+  ✨ <span style="letter-spacing:2px;">ZIVÉ</span> — Modern Fashion & E-Commerce Platform ✨
+</h1>
 
-<p align="center">
+<p align="center" style="font-size:1.15rem;">
   <em>A minimalist, premium, mobile-first fashion experience built with Flutter.<br>
   <strong>Shop. Discover. Design. Personalize.</strong></em>
 </p>
